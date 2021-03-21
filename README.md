@@ -66,5 +66,6 @@ Moodle: u admin, pass @Ubuntu2021
 Mysql: u root, pass ubuntu
 
 - VM -
-O arquivo da VM foi upado no google drive.
+O arquivo da VM foi upado no Google drive.
+Link: https://drive.google.com/file/d/1mLYxp5oU_Wy333HLABWsKDRPmSfBH3Rv/view?usp=sharing
 Link também no e-mail.
