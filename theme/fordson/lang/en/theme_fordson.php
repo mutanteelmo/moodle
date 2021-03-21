@@ -26,6 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Theme strings.
+$string['home_page'] = 'Home';
 $string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers, improved navigation, and enhanced homepage experience.';
 $string['configtitle'] = 'Fordson';
 $string['pluginname'] = 'Fordson';
