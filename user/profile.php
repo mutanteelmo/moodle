@@ -185,11 +185,21 @@ if ($PAGE->user_allowed_editing()) {
 
     $url = new moodle_url("$CFG->wwwroot/user/profile.php", $params);
     $button = $OUTPUT->single_button($url, $editstring);
-    $PAGE->set_button($resetbutton . $button);
+
+    // Elmo - 20-03-2021
+    // Added "Home page" button button
+    $home_page_params = array('redirect' => '0');
+    $string_home = get_string('home_page', 'theme_fordson');
+    $home_url = new moodle_url("$CFG->wwwroot/", $home_page_params);
+    $main_page_button = $OUTPUT->single_button($home_url, $string_home);
+    
+    // Adds $main_page_button
+    $PAGE->set_button($resetbutton . $button . $main_page_button);
 
 } else {
     $USER->editing = $edit = 0;
 }
+
 
 // Trigger a user profile viewed event.
 profile_view($user, $usercontext);
@@ -216,6 +226,7 @@ echo $OUTPUT->custom_block_region('content');
 // Render custom blocks.
 $renderer = $PAGE->get_renderer('core_user', 'myprofile');
 $tree = core_user\output\myprofile\manager::build_tree($user, $currentuser);
+// Render Blocks
 echo $renderer->render($tree);
 
 echo '</div>';  // Userprofile class.
